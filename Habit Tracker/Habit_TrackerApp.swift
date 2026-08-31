@@ -7,12 +7,14 @@
 
 import SwiftUI
 import SwiftData
+// MARK: ALL PREDETERMINED BY THE SYSTEM - Set Up Database, Model Config, etc.
 
+// MARK: @main -> Entry point for the program
 @main
 struct Habit_TrackerApp: App {
     var sharedModelContainer: ModelContainer = {
         let schema = Schema([
-            Item.self,
+            Habit.self,
         ])
         let modelConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: false)
 
