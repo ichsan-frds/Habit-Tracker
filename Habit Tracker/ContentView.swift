@@ -9,15 +9,45 @@ import SwiftUI
 import SwiftData
 
 struct ContentView: View {
-    @Environment(\.modelContext) private var modelContext
-    @Query private var items: [Item]
-    
     var body: some View {
-        HabitView()
+        HomeView()
     }
 }
 
 #Preview {
+    // MARK: DUMMY DATA ON LAUNCH - DELETE ON PROD
+//    let container = try! ModelContainer(
+//            for: Habit.self,
+//            configurations: ModelConfiguration(isStoredInMemoryOnly: true)
+//        )
+//
+//    let context = container.mainContext
+//
+//    context.insert(
+//        Habit(
+//            name: "Night Run",
+//            logo: "figure.walk",
+//            startTime: "18:00",
+//            endTime: "19:00",
+//            habitDescription: "",
+//            habitType: .old
+//        )
+//    )
+//    context.insert(
+//        Habit(
+//            name: "Night Run",
+//            logo: "figure.walk",
+//            startTime: "18:00",
+//            endTime: "19:00",
+//            habitDescription: "night run is fun",
+//            habitType: .old
+//        )
+//    )
+//
+//        return ContentView()
+//            .modelContainer(container)
+    
+// MARK: UNCOMMENT ON PROD
     ContentView()
-        .modelContainer(for: Item.self, inMemory: true)
+        .modelContainer(for: Habit.self, inMemory: true)
 }
